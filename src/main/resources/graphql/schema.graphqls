@@ -4,6 +4,14 @@ type Query{
     centres:[Centre]
     getCentreById(id:Float):Centre
 }
+type Mutation{
+    addEtudiant(etudiant : EtudiantDTO):Etudiant
+    updateEtudiant(id:Float,etudiant : EtudiantDTO):Etudiant
+    deleteEtudiant(id:Float):String
+}
+type Subscription{
+    etudiantAdded:Etudiant
+}
 type Etudiant{
     id:Float
     nom:String
@@ -16,4 +24,10 @@ type Centre{
     nom: String
     adresse:String
     listEtudiants:[Etudiant]
+}
+input EtudiantDTO{
+    nom:String
+    prenom:String
+    genre:String
+    centreId:Float
 }

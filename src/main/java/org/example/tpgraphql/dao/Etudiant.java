@@ -28,4 +28,6 @@ public class Etudiant {
     @NotNull
     @JoinColumn(name="centre_id")
     Centre centre;
+
+
 }
